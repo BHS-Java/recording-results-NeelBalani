@@ -2,7 +2,10 @@
 public class Main implements Spec{
     
     public static void main(String[] args) {
-        
+        Player p1 = new Player();
+        System.out.println(p1.getName());
+        System.out.println(p1.getAge());
+        System.out.println(p1.getHeight());
     }
 
     @Override
