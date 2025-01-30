@@ -3,7 +3,7 @@ public class Player implements Person {
     private String name;
     private int height;
     private int age;
-    private Results results;
+    Results results;
     
     public Player(String name, int age, int height){
         this.name = name;
@@ -15,6 +15,7 @@ public class Player implements Person {
     public void setName(String name){
         this.name = name;
     }
+    
 
     @Override
     public String getName(){
@@ -35,6 +36,11 @@ public class Player implements Person {
     public Results getResults(){
         return results;
     }
+
+    public void setResults (Results results){
+        this.results = results;
+    }
+
 
 
 }
