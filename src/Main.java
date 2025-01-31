@@ -5,7 +5,7 @@ public class Main implements Spec{
     public static void main(String[] args) {
         Main test = new Main();
 
-        String name = test.askString("What is your name?");
+        /*String name = test.askString("What is your name?");
         int age = test.askNumber("What is your age?");
         int height = test.askNumber("What is your height in inches?");
         Player p1 = new Player(name, age, height);
@@ -15,7 +15,65 @@ public class Main implements Spec{
         Player p2 = new Player(name, age, height);
         
         Game g = new Game(p1, p2);
-        p1.setResults(test.getResults(g));
+        p1.setResults(test.getResults(g));*/
+        test.climb("BR");
+        test.climb("BL");
+    }
+
+
+    public void climb(String direction){
+        if(direction.equals("UR")){
+            int o = 0;
+            for(int i = 5; i > 0; i--){
+                while(o <= i){
+                    System.out.print("  ");
+                    o++;
+                }
+                System.out.print("_");
+                System.out.print("|");
+                System.out.println();
+                o = 0;
+            }
+        }
+        if(direction.equals("UL")){
+            int o = 0;
+            for(int i = 0; i < 5; i++){
+                while(o <= i){
+                    System.out.print("  ");
+                    o++;
+                }
+                System.out.print("|");
+                System.out.print("_");
+                System.out.println();
+                o = 0;
+            }
+        }
+        if(direction.equals("BL")){
+            int o = 0;
+            for(int i = 5; i > 0; i--){
+                while(o <= i){
+                    System.out.print("_");
+                    o++;
+                }
+                System.out.print("_");
+                System.out.print("|");
+                System.out.println();
+                o = 0;
+            }
+        }
+        if(direction.equals("BR")){
+            int o = 0;
+            for(int i = 0; i < 5; i++){
+                while(o <= i){
+                    System.out.print("_");
+                    o++;
+                }
+                System.out.print("_");
+                System.out.print("|");
+                System.out.println();
+                o = 0;
+            }
+        }
     }
 
     @Override
@@ -23,6 +81,9 @@ public class Main implements Spec{
        System.out.println(question);
        return(s.next());
     }
+
+
+    
 
     @Override
     public int askNumber(String question) {
