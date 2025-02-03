@@ -1,5 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Game implements Results{
 
   Player p1;
@@ -7,14 +13,59 @@ public class Game implements Results{
   private boolean turn = true;
   private boolean winner = false;
   private String winName = "";
+  private ArrayList<String> list = new ArrayList<String>();
+  String[] WordList;
   
 
 
-  public Game(Player p1, Player p2){
-    this.p1 = p1;
-    this.p2 = p2;
+  public Game() throws FileNotFoundException, IOException{
+    loadPlayers();
+    p1 = selectPlayer();
+    p2 = selectPlayer();
     play();
     
+  }
+
+  public void loadPlayers() throws FileNotFoundException, IOException{
+    File f = new File("PlayerHub.csv");
+
+    Scanner s = new Scanner(f);
+    int i = 0;
+    
+
+    while (s.hasNextLine()){
+      while(s.hasNext()){
+        WordList = s.nextLine().split(",");
+        list.add(WordList[0]);
+        System.out.println(list.get(i));
+        i++;
+      }
+    }      
+ }
+
+  public Player selectPlayer() throws FileNotFoundException, IOException{
+
+    File f = new File("PlayerHub.csv");
+
+    Scanner s = new Scanner(f);
+    int i = 0;
+    
+
+    
+
+    Scanner n = new Scanner(System.in);
+    System.out.println("Choose your player.");
+    while (s.hasNextLine()){
+      while(s.hasNext()){
+        System.out.println(i + list.get(i));
+        i++;
+      }
+    }
+    int player = n.nextInt();
+    return new Player(list.get(player), player, i)
+    
+
+
   }
 
 

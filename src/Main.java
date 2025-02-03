@@ -1,11 +1,13 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 public class Main implements Spec{
     
     private Scanner s = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, IOException{
         Main test = new Main();
 
-        /*String name = test.askString("What is your name?");
+        String name = test.askString("What is your name?");
         int age = test.askNumber("What is your age?");
         int height = test.askNumber("What is your height in inches?");
         Player p1 = new Player(name, age, height);
@@ -15,9 +17,9 @@ public class Main implements Spec{
         Player p2 = new Player(name, age, height);
         
         Game g = new Game(p1, p2);
-        p1.setResults(test.getResults(g));*/
-        test.climb("BR");
-        test.climb("BL");
+        //p1.setResults(test.getResults(g));
+        //test.climb("BR");
+        //test.climb("BL");
     }
 
 
