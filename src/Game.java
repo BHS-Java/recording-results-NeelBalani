@@ -14,6 +14,8 @@ public class Game implements Results{
   private boolean winner = false;
   private String winName = "";
   private ArrayList<String> list = new ArrayList<String>();
+  private ArrayList<Integer> ageList = new ArrayList<Integer>();
+  private ArrayList<Integer> heightList = new ArrayList<Integer>();
   String[] WordList;
   
 
@@ -37,6 +39,8 @@ public class Game implements Results{
       while(s.hasNext()){
         WordList = s.nextLine().split(",");
         list.add(WordList[0]);
+        ageList.add(Integer.parseInt(WordList[1]));
+        ageList.add(Integer.parseInt(WordList[2]));
         System.out.println(list.get(i));
         i++;
       }
@@ -62,7 +66,7 @@ public class Game implements Results{
       }
     }
     int player = n.nextInt();
-    return new Player(list.get(player), player, i)
+    return new Player(list.get(player), ageList.get(player) , heightList.get(player));
     
 
 
